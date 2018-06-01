@@ -1,9 +1,5 @@
 import { asyncRouterMap, constantRouterMap } from '@/router'
-// import { constantRouterMap } from '@/router'
-import store from '@/store'
-import { formatRoutes } from '@/utils/util'
 
-// export const asyncRouterMap = [].concat(...formatRoutes(store.getters.roles.length), [])
 /**
  * 通过meta.role判断是否与当前用户权限匹配
  * @param roles

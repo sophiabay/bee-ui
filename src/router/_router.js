@@ -4,6 +4,23 @@ const _import = require('./_import_' + process.env.NODE_ENV)
 import Layout from '../views/layout/Layout'
 
 export default [
+  // {
+  //   path: '/admin',
+  //   component: Layout,
+  //   // redirect: '/admin/user/index',
+  //   // alwaysShow: true,
+  //   meta: {
+  //     title: 'system',
+  //     icon: 'lock'
+  //   },
+  //   children: [{
+  //     path: 'user/index',
+  //     component: _import('admin/user/index'),
+  //     name: 'user',
+  //     children: [],
+  //     meta: { title: 'user', icon: 'dashboard' }
+  //   }]
+  // },
   {
     path: '/permission',
     component: Layout,

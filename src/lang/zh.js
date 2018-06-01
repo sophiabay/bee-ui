@@ -50,7 +50,16 @@ export default {
     exportZip: 'Export Zip',
     theme: '换肤',
     clipboardDemo: 'Clipboard',
-    i18n: '国际化'
+    i18n: '国际化',
+    system: '系统管理',
+    user: '用户管理',
+    menu: '菜单管理',
+    role: '角色管理',
+    log: '日志管理',
+    dict: '字典管理',
+    dept: '部门管理',
+    route: '路由管理',
+    client: '客户端管理'
   },
   navbar: {
     logOut: '退出登录',

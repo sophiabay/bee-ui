@@ -1,6 +1,8 @@
 import { validatenull } from './validate'
 import { baseUrl } from '@/config/env'
-import store from '@/store'
+/* Layout */
+import Layout from '../views/layout/Layout'
+const _import = require('@/router/_import_' + process.env.NODE_ENV)
 
 export const initMenu = (router, menu) => {
   if (menu.length === 0) {
@@ -11,34 +13,93 @@ export const initMenu = (router, menu) => {
 
 export const formatRoutes = (aMenu) => {
   const aRouter = []
+
+  // const tRouter = []
+  // const tMenu = {
+  //   path: '/admin',
+  //   component: Layout,
+  //   meta: {
+  //     title: 'user',
+  //     icon: 'lock'
+  //   },
+  //   children: [{
+  //     path: 'user/index',
+  //     component: _import('admin/user/index'),
+  //     name: 'user',
+  //     meta: { title: 'user', icon: 'dashboard', noCache: true }
+  //   }]
+  // }
+  // tRouter.push(tMenu)
+
   aMenu.forEach(oMenu => {
     const {
       path,
       component,
       name,
-      icon,
-      children
+      children,
+      meta
     } = oMenu
+
+    // if (!validatenull(component)) {
+    //   if (validatenull(children)) {
+    //     const oRouter = {
+    //       // path: '/admin/user/index',
+    //       path: path,
+    //       component: null,
+    //       name: 'user',
+    //       meta: meta
+    //     }
+    //     oRouter.component = _import('admin/user/index')
+    //     aRouter.push(oRouter)
+    //   } else {
+    //     const oRouter = {
+    //       // path: '/admin',
+    //       path: '/' + path,
+    //       component: null,
+    //       alwaysShow: true,
+    //       name: 'user',
+    //       meta: meta,
+    //       children: validatenull(children) ? [] : formatRoutes(children)
+    //     }
+    //     oRouter.component = Layout
+    //     aRouter.push(oRouter)
+    //   }
+    // }
+
+    
+
     if (!validatenull(component)) {
       const oRouter = {
-        path: path,
-        component(resolve) {
-          let componentPath = ''
-          if (component === 'Layout') {
-            require(['../views/layout/Layout.vue'], resolve)
-            return
-          } else {
-            componentPath = component
-          }
-          require([`../${componentPath}.vue`], resolve)
-        },
+        path: (!validatenull(component) && children.length > 0) ? '/' + path : path,
+        // component(resolve) {
+        //   let componentPath = ''
+        //   console.info(component)
+        //   if (component === 'Layout') {
+        //     // require(['../views/layout/Layout.vue'], resolve)
+        //     return Layout
+        //   } else {
+        //     componentPath = component
+        //   }
+        //   require([`../${componentPath}.vue`], resolve)
+        // },
+        // // component: null,
+        component: (component === 'Layout') ? Layout : _import(component),
         name: name,
-        icon: icon,
-        children: validatenull(children) ? [] : formatRoutes(children)
+        children: validatenull(children) ? [] : formatRoutes(children),
+        meta: { title: 'user', icon: 'dashboard' }
       }
+      // if (component === 'Layout') {
+      //   oRouter.component = Layout
+      // } else {
+      //   oRouter.component = _import(component)
+      // }
+      // if (children.length > 0) {
+      //   oRouter.path = '/' + oRouter.path
+      // }
       aRouter.push(oRouter)
     }
   })
+
   return aRouter
 }
 

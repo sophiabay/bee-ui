@@ -50,7 +50,16 @@ export default {
     exportZip: 'Export Zip',
     theme: 'Theme',
     clipboardDemo: 'Clipboard',
-    i18n: 'I18n'
+    i18n: 'I18n',
+    system: 'System Manage',
+    user: 'User Manage',
+    menu: 'Menu Manage',
+    role: 'Role Manage',
+    log: 'Log Manage',
+    dict: 'Dict Manage',
+    dept: 'Dept Manage',
+    route: 'Rote Manage',
+    client: 'Client Manage'
   },
   navbar: {
     logOut: 'Log Out',

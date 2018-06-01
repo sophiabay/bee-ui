@@ -193,11 +193,11 @@ const user = {
       return new Promise(resolve => {
         getMenu().then((res) => {
           const data = res.data
-          data.forEach(ele => {
-            ele.children.forEach(child => {
-              if (!validatenull(child.component)) child.path = `${ele.path}/${child.path}`
-            })
-          })
+          // data.forEach(ele => {
+          //   ele.children.forEach(child => {
+          //     if (!validatenull(child.component)) child.path = `${ele.path}/${child.path}`
+          //   })
+          // })
           commit('SET_MENU', data)
           resolve(data)
         })

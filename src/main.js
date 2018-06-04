@@ -13,6 +13,8 @@ import store from './store'
 import router from './router'
 import axios from './router/axios'
 
+import AVUE from 'avue-cli/packages/index.js'
+
 import { loadStyle } from './utils/util'
 import * as urls from './config/env'
 import {

@@ -3,6 +3,7 @@
     <div class="login-border animated fadeInRight">
       <div class="login-main">
         <h4 class="login-title"> {{$t('login.title')}}
+          <lang-select class="set-language"></lang-select>
           <!-- <top-theme></top-theme> -->
         </h4>
         <el-tabs v-model="activeName">
@@ -25,12 +26,14 @@
 <script>
 import userLogin from './userlogin'
 import codeLogin from './codelogin'
+import LangSelect from '@/components/LangSelect'
 import { mapGetters } from 'vuex'
 export default {
   name: 'login',
   components: {
     userLogin,
-    codeLogin
+    codeLogin,
+    LangSelect
   },
   data() {
     return {

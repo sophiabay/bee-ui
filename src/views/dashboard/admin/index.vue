@@ -74,7 +74,7 @@ const lineChartData = {
 export default {
   name: 'dashboard-admin',
   components: {
-    GithubCorner,
+    // GithubCorner,
     PanelGroup,
     LineChart,
     RaddarChart,

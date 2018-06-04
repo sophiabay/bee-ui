@@ -86,7 +86,7 @@ export const formatRoutes = (aMenu) => {
         component: (component === 'Layout') ? Layout : _import(component),
         name: name,
         children: validatenull(children) ? [] : formatRoutes(children),
-        meta: { title: 'user', icon: 'dashboard' }
+        meta: meta
       }
       // if (component === 'Layout') {
       //   oRouter.component = Layout

@@ -23,7 +23,7 @@ export const tableOption = {
     addVisdiplay: false
   }, {
     width: 150,
-    label: '服务名称',
+    label: '服务名ss称',
     prop: 'serviceId',
     align: 'center',
     sortable: true,
@@ -58,7 +58,7 @@ export const tableOption = {
       trigger: 'blur'
     }]
   }, {
-    label: '是否重试',
+    label: '是否重试ss',
     prop: 'retryable',
     align: 'center',
     width: 150,

@@ -80,7 +80,7 @@ import waves from '@/directive/waves/index.js' // 水波纹指令
 import { mapGetters } from 'vuex'
 
 export default {
-  name: 'log',
+  name: 'admin-log',
   directives: { waves },
   data() {
     return {

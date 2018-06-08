@@ -126,7 +126,7 @@ import ElOption from 'element-ui/packages/select/src/option'
 import waves from '@/directive/waves/index.js' // 水波纹指令
 export default {
   comments: { ElRadioGroup, ElOption },
-  name: 'table_user',
+  name: 'admin-user',
   directives: { waves },
   data() {
     return {
@@ -204,7 +204,6 @@ export default {
   methods: {
     getList() {
       this.listLoading = true
-      this.listQuery.orderByField = '`user`.create_time'
       this.listQuery.isAsc = false
       fetchList(this.listQuery).then(response => {
         this.list = response.data.records

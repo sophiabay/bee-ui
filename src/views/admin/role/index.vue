@@ -105,7 +105,7 @@ import { mapGetters } from 'vuex'
 import waves from '@/directive/waves/index.js' // 水波纹指令
 
 export default {
-  name: 'role',
+  name: 'admin-role',
   directives: { waves },
   data() {
     return {

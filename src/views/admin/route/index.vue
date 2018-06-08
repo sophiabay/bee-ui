@@ -17,7 +17,7 @@ import { fetchList, addObj, putObj, delObj, applyObj } from '@/api/route'
 import { tableOption } from '@/const/crud/route'
 import { mapGetters } from 'vuex'
 export default {
-  name: 'route',
+  name: 'admin-route',
   data() {
     return {
       tableData: [],

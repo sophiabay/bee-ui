@@ -100,7 +100,7 @@ import waves from '@/directive/waves/index.js' // 水波纹指令
 import { mapGetters } from 'vuex'
 
 export default {
-  name: 'table_sys_dict',
+  name: 'admin-dict',
   directives: { waves },
   data() {
     return {

@@ -83,7 +83,7 @@
   import { fetchTree, getObj, addObj, delObj, putObj } from '@/api/menu'
   import { mapGetters } from 'vuex'
   export default {
-    name: 'menu',
+    name: 'admin-menu',
     data() {
       return {
         list: null,

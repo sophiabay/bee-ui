@@ -2,7 +2,7 @@
   <div class="from-container pull-auto">
     <el-form ref="form" :model="form" :label-width="setPx(option.labelWidth,80)" :rules="formRules">
       <el-row :gutter="20" :span="24">
-        <template v-for="(column,index) in option.column">
+        <template v-for="column in option.column">
           <el-col :span="column.span||12">
             <el-form-item :label="column.label" :prop="column.prop" :label-width="setPx(column.labelWidth,option.labelWidth || 80)">
               <slot :value="form[column.prop]" :column="column" :dic="setDic(column.dicData,DIC[column.dicData])" :name="column.prop" v-if="column.formsolt"></slot>
@@ -37,13 +37,13 @@ export default {
     }
   },
   created() {
-    //规则初始化
+    // 规则初始化
     this.rulesInit()
-    //初始化dic字典
+    // 初始化dic字典
     this.dicInit()
-    //初始化form表单
+    // 初始化form表单
     this.formInit()
-    //初始化值
+    // 初始化值
     this.formVal()
   },
   watch: {
@@ -91,18 +91,18 @@ export default {
     },
     formInit() {
       const list = this.option.column
-      let form = {}
+      const form = {}
       list.forEach(ele => {
         if (
-          ele.type == 'checkbox' ||
-          ele.type == 'radio' ||
-          ele.type == 'cascader'
+          ele.type === 'checkbox' ||
+          ele.type === 'radio' ||
+          ele.type === 'cascader'
         ) {
           form[ele.prop] = []
         } else {
           form[ele.prop] = ''
         }
-        if (!validatenull(ele.valueDefault)) from[ele.prop] = ele.valueDefault
+        if (!validatenull(ele.valueDefault)) form[ele.prop] = ele.valueDefault
       })
       this.form = Object.assign({}, form)
     },

@@ -48,7 +48,7 @@ if (typeof window !== 'undefined' && window.Vue && window.axios) {
   install(window.Vue, window.axios)
 }
 export default {
-  version: '1.3.5',
+  version: '1.4.2',
   Crud,
   Form,
   CrudCheckbox,
@@ -58,7 +58,7 @@ export default {
   CrudRadio,
   CrudSelect,
   CrudCascader,
-  // CrudNumberInput,
+  CrudNumberInput,
   CrudUeditor,
   DataDisplay,
   DataCard,

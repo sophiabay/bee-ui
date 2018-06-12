@@ -1,6 +1,7 @@
 import {
   findByvalue,
   getComponent,
+  getSearchType,
   setDic,
   setPx
 } from '../utils/util.js'
@@ -65,6 +66,9 @@ export default function() {
       },
       getComponent: function(type) {
         return getComponent(type)
+      },
+      getSearchType: function(type) {
+        return getSearchType(type)
       },
       findByvalue: function(dic, val) {
         return findByvalue(dic, val)

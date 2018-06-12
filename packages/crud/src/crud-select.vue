@@ -1,5 +1,5 @@
 <template>
-  <el-select v-model="text" :placeholder="'请选择'+placeholder" @change="handleChange" :disabled="disabled">
+  <el-select v-model="text" :size="size" :placeholder="'请选择'+placeholder" @change="handleChange" :disabled="disabled">
     <el-option v-for="(item,index) in dic" :key="index" :label="item.label" :value="item.value">
     </el-option>
   </el-select>
@@ -18,6 +18,10 @@ export default {
       default: ''
     },
     placeholder: {
+      type: String,
+      default: ''
+    },
+    size: {
       type: String,
       default: ''
     },
@@ -45,5 +49,5 @@ export default {
       this.$emit('input', value)
     }
   }
-};
+}
 </script>

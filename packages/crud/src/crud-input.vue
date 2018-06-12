@@ -1,5 +1,7 @@
 <template>
-  <el-input :size="size" :clearable="clearable" v-model="text" :type="type=='textarea'?'textarea':'text'" :autosize="{ minRows: minRows, maxRows: maxRows}" :placeholder="'请输入'+placeholder" @change="handleChange" :disabled="disabled"></el-input>
+  <el-input :size="size" :clearable="clearable" v-model="text" :type="typeParam" 
+  :autosize="{ minRows: minRows, maxRows: maxRows}" :placeholder="'请输入'+placeholder" 
+  @change="handleChange" :disabled="disabled"></el-input>
 </template>
 
 <script>
@@ -46,6 +48,17 @@ export default {
   watch: {
     value: function(n, o) {
       this.text = this.value
+    }
+  },
+  computed: {
+    typeParam: function() {
+      if (this.type === 'textarea') {
+        return 'textarea'
+      } else if (this.type === 'password') {
+        return 'password'
+      } else {
+        return 'text'
+      }
     }
   },
   created() {

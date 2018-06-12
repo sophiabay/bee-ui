@@ -37,7 +37,7 @@ Vue.use(Element, {
   i18n: (key, value) => i18n.t(key, value)
 })
 Vue.use(VueAxios, axios)
-Vue.use(AVUEs)
+// Vue.use(AVUEs)
 Vue.use(AvueCrud)
 
 Object.keys(urls).forEach(key => {

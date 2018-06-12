@@ -58,7 +58,7 @@ export default {
   CrudRadio,
   CrudSelect,
   CrudCascader,
-  CrudNumberInput,
+  // CrudNumberInput,
   CrudUeditor,
   DataDisplay,
   DataCard,

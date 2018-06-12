@@ -1,27 +1,26 @@
-import AvueCurdCheckbox from './src/crud-checkbox'
-import AvueCurdDate from './src/crud-date'
-import AvueCurdTime from './src/crud-time'
-import AvueCurdInput from './src/crud-input'
-import AvueCurdRadio from './src/crud-radio'
-import AvueCurdSelect from './src/crud-select'
-import AvueCurdCascader from './src/crud-cascader'
-import AvueCurdInputNumber from './src/crud-input-number'
-import AvueCurdUeditor from './src/crud-ueditor'
-import AvueCrud from './src/main'
+import SvueCurdCheckbox from './src/crud-checkbox'
+import SvueCurdDate from './src/crud-date'
+import SvueCurdTime from './src/crud-time'
+import SvueCurdInput from './src/crud-input'
+import SvueCurdRadio from './src/crud-radio'
+import SvueCurdSelect from './src/crud-select'
+import SvueCurdCascader from './src/crud-cascader'
+import SvueCurdInputNumber from './src/crud-input-number'
+import SvueCurdUeditor from './src/crud-ueditor'
+import SvueCrud from './src/main'
 const components = [
-  AvueCrud,
-  AvueCurdCheckbox,
-  AvueCurdDate,
-  AvueCurdTime,
-  AvueCurdInput,
-  AvueCurdRadio,
-  AvueCurdSelect,
-  AvueCurdCascader,
-  AvueCurdInputNumber,
-  AvueCurdUeditor
+  SvueCrud,
+  SvueCurdCheckbox,
+  SvueCurdDate,
+  SvueCurdTime,
+  SvueCurdInput,
+  SvueCurdRadio,
+  SvueCurdSelect,
+  SvueCurdCascader,
+  SvueCurdInputNumber,
+  SvueCurdUeditor
 ]
 
-/* istanbul ignore next */
 export default function(Vue) {
   components.map(component => {
     Vue.component(component.name, component)
@@ -29,13 +28,13 @@ export default function(Vue) {
 }
 
 export {
-  AvueCrud,
-  AvueCurdCheckbox,
-  AvueCurdDate,
-  AvueCurdTime,
-  AvueCurdInput,
-  AvueCurdRadio,
-  AvueCurdSelect,
-  AvueCurdInputNumber,
-  AvueCurdUeditor
+  SvueCrud,
+  SvueCurdCheckbox,
+  SvueCurdDate,
+  SvueCurdTime,
+  SvueCurdInput,
+  SvueCurdRadio,
+  SvueCurdSelect,
+  SvueCurdInputNumber,
+  SvueCurdUeditor
 }

@@ -23,7 +23,7 @@
 
 <script>
 export default {
-  name: 'AvueDataTabs',
+  name: 'SvueDataTabs',
   data() {
     return {
       span: this.option.span || 6,

@@ -5,7 +5,7 @@
 
 <script>
 export default {
-  name: 'AvueCrudCascader',
+  name: 'SvueCrudCascader',
   data() {
     return {
       text: []

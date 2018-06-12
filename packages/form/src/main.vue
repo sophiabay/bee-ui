@@ -26,7 +26,7 @@
 import crud from '../../mixins/crud'
 import { validatenull } from '../../utils/validate.js'
 export default {
-  name: 'AvueForm',
+  name: 'SvueForm',
   mixins: [crud()],
   components: {},
   data() {

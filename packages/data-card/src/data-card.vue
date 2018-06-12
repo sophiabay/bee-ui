@@ -16,7 +16,7 @@
 
 <script>
 export default {
-  name: 'AvueDataCard',
+  name: 'SvueDataCard',
   data() {
     return {
       span: this.option.span || 6,

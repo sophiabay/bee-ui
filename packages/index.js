@@ -33,15 +33,15 @@ const components = [
 const install = function(Vue, axios, opts = {}) {
   // 注入axios
   Vue.prototype.$http = axios
-  const AVUE = {
+  const SVUE = {
     clientHeight: document.documentElement.clientHeight
   }
   components.map(component => {
     Vue.component(component.name, component)
   })
 
-  AVUE.size = opts.size || ''
-  Vue.prototype.$AVUE = AVUE
+  SVUE.size = opts.size || ''
+  Vue.prototype.$SVUE = SVUE
 }
 
 if (typeof window !== 'undefined' && window.Vue && window.axios) {

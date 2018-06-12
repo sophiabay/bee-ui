@@ -7,7 +7,7 @@
 <script>
 import { quillEditor } from 'vue-quill-editor'
 export default {
-  name: 'AvueCrudUeditor',
+  name: 'SvueCrudUeditor',
   components: {
     quillEditor
   },

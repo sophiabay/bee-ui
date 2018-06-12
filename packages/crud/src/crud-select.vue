@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: 'AvueCrudSelect',
+  name: 'SvueCrudSelect',
   data() {
     return {
       text: ''

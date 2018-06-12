@@ -15,7 +15,7 @@
 
 <script>
 export default {
-  name: 'AvueDataDisplay',
+  name: 'SvueDataDisplay',
   data() {
     return {
       span: this.option.span || 8,

@@ -85,7 +85,7 @@ import crud from '../../mixins/crud.js'
 import { validatenull } from '../../utils/validate.js'
 import moment from 'moment'
 export default {
-  name: 'AvueCrud',
+  name: 'SvueCrud',
   mixins: [crud()],
   components: {},
   data() {

@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'AvueCrudInput',
+  name: 'SvueCrudInput',
   data() {
     return {
       text: ''

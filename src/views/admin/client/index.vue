@@ -2,12 +2,12 @@
   <div class="app-container pull-auto">
     <el-button type="primary" @click="handleAdd" size="small" v-if="permissions.sys_client_add">新 增</el-button>
     <br /><br />
-    <avue-crud ref="crud" :page="page" :data="tableData" :table-loading="tableLoading" :option="tableOption" @current-change="currentChange" @row-update="handleUpdate" @row-save="handleSave" @row-del="rowDel">
+    <svue-crud ref="crud" :page="page" :data="tableData" :table-loading="tableLoading" :option="tableOption" @current-change="currentChange" @row-update="handleUpdate" @row-save="handleSave" @row-del="rowDel">
       <template slot-scope="scope" slot="menu">
         <el-button type="primary" v-if="permissions.sys_client_upd" icon="el-icon-check" size="small" plain @click="handleEdit(scope.row,scope.index)">编辑</el-button>
         <el-button type="danger" v-if="permissions.sys_client_del" icon="el-icon-delete" size="small" plain @click="handleDel(scope.row,scope.index)">删除</el-button>
       </template>
-    </avue-crud>
+    </svue-crud>
   </div>
 </template>
 

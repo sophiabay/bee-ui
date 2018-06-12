@@ -20,7 +20,7 @@
 
 <script>
 export default {
-  name: 'AvueDataIcons',
+  name: 'SvueDataIcons',
   data() {
     return {
       span: this.option.span || 6,

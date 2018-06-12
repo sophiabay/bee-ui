@@ -13,8 +13,8 @@ import store from './store'
 import router from './router'
 import axios from './router/axios'
 
-import AVUEs from '../packages/index.js'
-import { AvueCrud } from '../packages/crud/_index'
+import SVUE from '../packages/index.js'
+import { SvueCrud } from '../packages/crud/_index'
 
 import { loadStyle } from './utils/util'
 import * as urls from './config/env'
@@ -37,8 +37,8 @@ Vue.use(Element, {
   i18n: (key, value) => i18n.t(key, value)
 })
 Vue.use(VueAxios, axios)
-// Vue.use(AVUEs)
-Vue.use(AvueCrud)
+Vue.use(SVUE)
+Vue.use(SvueCrud)
 
 Object.keys(urls).forEach(key => {
   Vue.prototype[key] = urls[key]

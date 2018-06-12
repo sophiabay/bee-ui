@@ -5,9 +5,7 @@ import {
   setDic,
   setPx
 } from '../utils/util.js'
-import {
-  validatenull
-} from '../utils/validate.js'
+import { validatenull } from '../utils/validate.js'
 import crudInput from '../crud/src/crud-input'
 import crudSelect from '../crud/src/crud-select'
 import crudRadio from '../crud/src/crud-radio'

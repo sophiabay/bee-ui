@@ -2,6 +2,7 @@
   <div class="app-container pull-auto">
     <el-button type="primary" @click="handleAdd" size="small" v-if="permissions.sys_route_add">新 增</el-button>
     <el-button type="success" @click="handleApply" size="small" v-if="permissions.sys_route_add">同 步</el-button>
+    <el-button type="info" @click="handleExportExcel" size="small" v-if="permissions.sys_route_add">导出excel</el-button>
     <br /><br />
     <svue-crud ref="crud" :page="page" :data="tableData" :table-loading="tableLoading" 
     :option="tableOption" @current-change="currentChange" @row-update="handleUpdate" @row-save="handleSave" @row-del="rowDel">
@@ -17,6 +18,7 @@
 import { fetchList, addObj, putObj, delObj, applyObj } from '@/api/route'
 import { tableOption } from '@/const/crud/route'
 import { mapGetters } from 'vuex'
+import { parseTime } from '@/utils'
 export default {
   name: 'admin-route',
   data() {
@@ -87,6 +89,28 @@ export default {
     },
     handleDel(row, index) {
       this.$refs.crud.rowDel(row, index)
+    },
+    handleExportExcel() {
+      import('@/vendor/Export2Excel').then(excel => {
+        const tHeader = ['创建时间', '删除标记', '是否可用', 'Id']
+        const filterVal = ['createTime', 'delFlag', 'enabled', 'id']
+        const list = this.tableData
+        const data = this.formatJson(filterVal, list)
+        excel.export_json_to_excel({
+          header: tHeader,
+          data,
+          filename: 'test'
+        })
+      })
+    },
+    formatJson(filterVal, jsonData) {
+      return jsonData.map(v => filterVal.map(j => {
+        if (j === 'timestamp') {
+          return parseTime(v[j])
+        } else {
+          return v[j]
+        }
+      }))
     },
     rowDel: function(row, index) {
       var _this = this

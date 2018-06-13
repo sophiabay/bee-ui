@@ -15,6 +15,8 @@ import axios from './router/axios'
 
 import SVUE from '../packages/index.js'
 import { SvueCrud } from '../packages/crud/_index'
+import Form from '../packages/form/index'
+import CrudCheckBox from '../packages/crud-checkbox/index'
 
 import { loadStyle } from './utils/util'
 import * as urls from './config/env'
@@ -37,8 +39,11 @@ Vue.use(Element, {
   i18n: (key, value) => i18n.t(key, value)
 })
 Vue.use(VueAxios, axios)
+
 Vue.use(SVUE)
 Vue.use(SvueCrud)
+Vue.use(Form)
+Vue.use(CrudCheckBox)
 
 Object.keys(urls).forEach(key => {
   Vue.prototype[key] = urls[key]

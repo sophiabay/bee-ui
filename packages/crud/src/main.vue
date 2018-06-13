@@ -5,7 +5,8 @@
       <el-form :model="searchForm" :inline="true" ref="searchForm" v-if="searchFlag">
         <!-- 循环列搜索框 -->
         <el-form-item :label="column.label" :prop="column.prop" v-for="(column,index) in option.column" :key="index" v-if="column.search">
-          <component :size="option.searchSize" :is="getSearchType(column.type)" v-model="searchForm[column.prop]" clearable:type="column.type" :placeholder="column.label" :dic="setDic(column.dicData,DIC[column.dicData])"></component>
+          <component :size="option.searchSize" :is="getSearchType(column.type)" v-model="searchForm[column.prop]" 
+          clearable:type="column.type" :placeholder="column.label" :dic="setDic(column.dicData,DIC[column.dicData])"></component>
         </el-form-item>
         <el-form-item>
           <el-button type="primary" @click="searchChnage" icon="el-icon-search" :size="option.searchSize">搜索</el-button>
@@ -14,7 +15,12 @@
       </el-form>
       <slot name="headerAfter"></slot>
     </div>
-    <el-table :data="data" :stripe="option.stripe" :show-header="option.showHeader" :default-sort="option.defaultSort" @row-click="rowClick" @row-dblclick="rowDblclick" max-height="option.maxHeight" :height="option.height=='auto'?($AVUE.clientHeight - vaildData(option.calcHeight,275)):option.height" ref="table" :width="setPx(option.width,'100%')" :border="option.border" v-loading="tableLoading" @selection-change="selectionChange" @sort-change="sortChange">
+    <el-table :data="data" :stripe="option.stripe" :show-header="option.showHeader" :default-sort="option.defaultSort" @row-click="rowClick" 
+    @row-dblclick="rowDblclick" max-height="option.maxHeight" 
+    :height="option.height=='auto'?($AVUE.clientHeight - vaildData(option.calcHeight,275)):option.height" 
+    ref="table" :width="setPx(option.width,'100%')" 
+    :border="option.border" v-loading="tableLoading" 
+    @selection-change="selectionChange" @sort-change="sortChange">
       <!-- 下拉弹出框  -->
       <template v-if="option.expand">
         <el-table-column type="expand" width="50" fixed="left" align="center">
@@ -85,7 +91,7 @@ import crud from '../../mixins/crud.js'
 import { validatenull } from '../../utils/validate.js'
 import moment from 'moment'
 export default {
-  name: 'SvueCrud',
+  name: 'svueCrud',
   mixins: [crud()],
   components: {},
   data() {

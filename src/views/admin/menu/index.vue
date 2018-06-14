@@ -26,7 +26,7 @@
       </el-col>
       <el-col :span="16" style='margin-top:15px;'>
         <el-card class="box-card">
-          <el-form :label-position="labelPosition" label-width="80px" :model="form" ref="form">
+          <el-form :label-position="labelPosition" label-width="90px" :model="form" ref="form">
             <el-form-item label="父级节点" prop="parentId">
               <el-input v-model="form.parentId" :disabled="true" placeholder="请输入父级节点"></el-input>
             </el-form-item>
@@ -62,7 +62,10 @@
               <el-input v-model="form.component" :disabled="formEdit" placeholder="请输入描述"></el-input>
             </el-form-item>
             <el-form-item label="前端地址"   prop="component">
-              <el-input v-model="form.path" :disabled="formEdit" placeholder="iframe嵌套地址"></el-input>
+              <el-input v-model="form.path" :disabled="formEdit" placeholder="嵌套地址"></el-input>
+            </el-form-item>
+            <el-form-item label="iframe路径"   prop="component">
+              <el-input v-model="form.iframeSrc" :disabled="formEdit" placeholder="iframe访问地址"></el-input>
             </el-form-item>
             <el-form-item v-if="formStatus == 'update'">
               <el-button type="primary" @click="update">更新</el-button>

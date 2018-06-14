@@ -72,8 +72,8 @@ export default {
     },
     getUrlPath() {
       // 获取iframe src路径
-      if (this.$route.matched.some(record => record.meta.urlPath)) {
-        return this.$route.meta.urlPath
+      if (this.$route.matched.some(record => record.meta.iframeSrc)) {
+        return this.$route.meta.iframeSrc
       }
     }
   }

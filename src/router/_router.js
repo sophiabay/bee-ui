@@ -21,6 +21,51 @@ export default [
   //     meta: { title: 'user', icon: 'dashboard' }
   //   }]
   // },
+  // {
+  //   path: '/iframe',
+  //   component: Layout,
+  //   redirect: '/iframe', // you can set roles in root nav,
+  //   hidden: true,
+  //   children: [{
+  //     path: ':routerPath',
+  //     component: _import('iframe/index'),
+  //     name: 'iframe',
+  //     meta: {
+  //       title: 'iframe',
+  //       icon: 'people'
+  //     }
+  //   }]
+  // },
+  {
+    path: '/iframe',
+    component: Layout,
+    redirect: '/iframe/index',
+    alwaysShow: true, // will always show the root menu
+    meta: {
+      title: '第三方访问',
+      icon: 'lock'
+    },
+    children: [{
+      path: 'taobao',
+      component: _import('iframe/index'),
+      // component: IframeLayout,
+      props: true,
+      name: 'iframe12',
+      meta: {
+        title: '淘宝',
+        urlPath: 'https://www.taobao.com'
+      }
+    }, {
+      path: 'baidu',
+      component: _import('iframe/index'),
+      name: 'iframetest',
+      params: { src: 'https://www.baidu.com' },
+      meta: {
+        title: '百度',
+        urlPath: 'https://www.baidu.com'
+      }
+    }]
+  },
   {
     path: '/permission',
     component: Layout,

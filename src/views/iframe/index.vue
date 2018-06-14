@@ -1,6 +1,5 @@
 <template>
-  <iframe v-if="$route.query.src" :src="$route.query.src" class="iframe" ref="iframe"></iframe>
-  <iframe v-else :src="urlPath" class="iframe" ref="iframe"></iframe>
+  <iframe :src="urlPath" class="iframe" ref="iframe"></iframe>
 </template>
 
 <script>
@@ -20,21 +19,16 @@ export default {
     this.load()
     this.resize()
   },
-  props: ['routerPath'],
   watch: {
-    $route: function() {
+    $route: function(to, from) {
+      if (to.name !== from.name) {
+        this.urlPath = this.getUrlPath()
+      }
       this.load()
-    },
-    routerPath: function(val) {
-      // 监听routerPath变化，改变src路径
-      this.urlPath = this.getUrlPath()
     }
   },
-  comments: {
-    ...mapGetters(['tagList']),
-    tagListNum: function() {
-      return this.tagList.length !== 0
-    }
+  computed: {
+    ...mapGetters(['tagList'])
   },
   methods: {
     // 显示等待框
@@ -54,23 +48,6 @@ export default {
     // 加载组件
     load() {
       this.show()
-      var flag = true // URL是否包含请求参数
-      if (this.$route.query.src.indexOf('?') === -1) {
-        flag = false
-      }
-      var list = []
-      for (var key in this.$route.query) {
-        if (key !== 'src' && key !== 'name') {
-          list.push(`${key}=this.$route.query[key]`)
-        }
-      }
-      list = list.join('&').toString()
-      if (flag) {
-        this.$route.query.src = `${this.$route.query.src}${list.length > 0 ? `&list` : ''}`
-      } else {
-        this.$route.query.src = `${this.$route.query.src}${list.length > 0 ? `?list` : ''}`
-      }
-
       // 超时，则自动隐藏等待框
       let time = 3
       const timeFunc = setInterval(() => {
@@ -85,7 +62,7 @@ export default {
     // iframe初始化
     iframeInit() {
       const iframe = this.$refs.iframe
-      const clientHeight = document.documentElement.clientHeight - 200
+      const clientHeight = document.documentElement.clientHeight - 90
       iframe.style.height = `${clientHeight}px`
       if (iframe.attachEvent) {
         iframe.attachEvent('onload', () => {
@@ -95,9 +72,9 @@ export default {
     },
     getUrlPath() {
       // 获取iframe src路径
-      let url = window.location.href
-      url = url.replace('/iframe', '')
-      return url
+      if (this.$route.matched.some(record => record.meta.urlPath)) {
+        return this.$route.meta.urlPath
+      }
     }
   }
 }

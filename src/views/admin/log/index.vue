@@ -55,7 +55,7 @@
 
       <el-table-column align="center" label="创建时间">
         <template slot-scope="scope">
-          <span>{{ scope.row.createTime | moment('YYYY-MM-DD HH:mm') }}</span>
+          <span>{{ formatDatetime(scope.row.createTime) }}</span>
         </template>
       </el-table-column>
 
@@ -78,6 +78,7 @@ import { delObj, fetchList } from '@/api/log'
 import { remote } from '@/api/dict'
 import waves from '@/directive/waves/index.js' // 水波纹指令
 import { mapGetters } from 'vuex'
+import moment from 'moment'
 
 export default {
   name: 'admin-log',
@@ -114,6 +115,9 @@ export default {
     })
   },
   methods: {
+    formatDatetime(datetime) {
+      return moment(datetime).format('YYYY-MM-DD HH:mm:ss')
+    },
     getSerialNumber(index) {
       return index + 1 + (this.listQuery.page - 1) * this.listQuery.limit
     },

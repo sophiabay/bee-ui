@@ -30,7 +30,7 @@
         </el-row>
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" size="small" @click="handleLogin" class="login-submit">登录</el-button>
+        <el-button type="primary" size="small" @click="handleLogin" class="login-submit" :loading="loading">登录</el-button>
       </el-form-item>
     </el-form>
 
@@ -72,7 +72,8 @@ export default {
           { min: 4, max: 4, message: '验证码长度为4', trigger: 'blur' }
         ]
       },
-      passwordType: 'password'
+      passwordType: 'password',
+      loading: false
     }
   },
   created() {

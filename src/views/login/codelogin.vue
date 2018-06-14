@@ -2,7 +2,7 @@
   <el-form class="login-form" status-icon :rules="loginRules" ref="loginForm" :model="loginForm" label-width="0">
     <el-form-item prop="mobile">
       <el-input size="small" @keyup.enter.native="handleLogin" v-model="loginForm.mobile" auto-complete="off" placeholder="请输入手机号码">
-        <i slot="prefix" class="icon-shouji"></i>
+        <i slot="prefix" class="iconfont icon-shouji"></i>
       </el-input>
     </el-form-item>
     <el-form-item prop="code">
@@ -10,7 +10,8 @@
         <template slot="append">
           <span @click="handleSend" class="msg-text" :class="[{display:msgKey}]">{{msgText}}</span>
         </template>
-        <i slot="prefix" class="icon-yanzhengma" style="margin-top:10px;"></i>
+        <!-- <i slot="prefix" class="icon-yanzhengma" style="margin-top:10px;"></i> -->
+        <i slot="prefix" class="iconfont icon-mima" style="margin-top:10px;"></i>
       </el-input>
     </el-form-item>
     <el-form-item>
@@ -23,6 +24,8 @@
 import { isvalidatemobile } from '@/utils/validate'
 import { mapGetters } from 'vuex'
 import request from '@/router/axios'
+import '@/assets/custom-icons/iconfont.css'
+
 const MSGINIT = '发送验证码'
 const MSGERROR = '验证码发送失败'
 const MSGSCUCCESS = '${time}秒后重发'

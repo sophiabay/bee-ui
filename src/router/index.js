@@ -57,6 +57,12 @@ export const constantRouterMap = [
       component: _import('dashboard/index'),
       name: 'dashboard',
       meta: { title: 'dashboard', icon: 'dashboard', noCache: true }
+    },
+    {
+      path: 'dev',
+      component: _import('dev/index'),
+      name: 'dev',
+      meta: { title: '开发', icon: 'dashboard', noCache: true }
     }]
   }
   // {
